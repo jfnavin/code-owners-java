@@ -23,6 +23,7 @@ public class Example {
         Buzz.sayHello();
         Fizz.sayHello();
         Beta.sayHello();
+        Foo.sayHello();
 
     }
 }

@@ -1,11 +1,11 @@
 package com.jfnavin.codeowners.resolver;
 
-import com.jfnavin.codeowners.annotation.Owner;
+import com.jfnavin.codeowners.model.Owner;
 
 import java.util.Optional;
 
 /**
- * A {@link OwnerResolver} that uses reflection to scan for the "closest" {@link Owner} annotation
+ * A {@link OwnerResolver} that uses reflection to scan for the "closest" {@link com.jfnavin.codeowners.annotation.Owner} annotation
  * to denote the owner for a given class.
  * <p>
  * Scanning starts at the given class, then works upwards through packages looking for annotations on
@@ -37,15 +37,15 @@ public class ReflectionResolver implements OwnerResolver {
         }
     }
 
-    public Optional<String> resolverOwner(final Class<?> clazz) {
+    public Optional<Owner> resolverOwner(final Class<?> clazz) {
         if (cache != null && cache.has(clazz)) {
             return Optional.ofNullable(cache.get(clazz));
         }
 
         // Check for an annotation on the class itself
-        var annotation = clazz.getAnnotation(Owner.class);
+        var annotation = clazz.getAnnotation(com.jfnavin.codeowners.annotation.Owner.class);
         if (annotation != null) {
-            final String value = annotation.value();
+            final var value = new Owner(annotation.value());
             if (cache != null) {
                 cache.put(clazz, value);
             }
@@ -57,9 +57,9 @@ public class ReflectionResolver implements OwnerResolver {
         while (!packageName.isBlank()) {
             try {
                 final var c = Class.forName(packageName + ".package-info");
-                annotation = c.getAnnotation(Owner.class);
+                annotation = c.getAnnotation(com.jfnavin.codeowners.annotation.Owner.class);
                 if (annotation != null) {
-                    final String value = annotation.value();
+                    final var value = new Owner(annotation.value());
                     if (cache != null) {
                         cache.put(clazz, value);
                     }

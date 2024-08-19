@@ -29,6 +29,10 @@
         </dependency>
         <dependency>
             <groupId>com.jfnavin.codeowners</groupId>
+            <artifactId>codeowners-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jfnavin.codeowners</groupId>
             <artifactId>codeowners-resolver-reflection</artifactId>
         </dependency>
         <dependency>

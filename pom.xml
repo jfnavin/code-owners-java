@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jfnavin.codeowners</groupId>
-    <artifactId>code-owners-java</artifactId>
+    <artifactId>codeowners-java</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
@@ -32,27 +32,27 @@
         <dependencies>
             <dependency>
                 <groupId>com.jfnavin.codeowners</groupId>
-                <artifactId>annotations</artifactId>
+                <artifactId>codeowners-annotations</artifactId>
                 <version>${codeowners.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jfnavin.codeowners</groupId>
-                <artifactId>resolver-api</artifactId>
+                <artifactId>codeowners-resolver-api</artifactId>
                 <version>${codeowners.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jfnavin.codeowners</groupId>
-                <artifactId>resolver-reflection</artifactId>
+                <artifactId>codeowners-resolver-reflection</artifactId>
                 <version>${codeowners.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jfnavin.codeowners</groupId>
-                <artifactId>log4j2</artifactId>
+                <artifactId>codeowners-log4j2</artifactId>
                 <version>${codeowners.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.jfnavin.codeowners</groupId>
-                <artifactId>examples</artifactId>
+                <artifactId>codeowners-examples</artifactId>
                 <version>${codeowners.version}</version>
             </dependency>
 

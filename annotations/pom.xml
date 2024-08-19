@@ -6,12 +6,12 @@
 
     <parent>
         <groupId>com.jfnavin.codeowners</groupId>
-        <artifactId>code-owners-java</artifactId>
+        <artifactId>codeowners-java</artifactId>
         <version>1.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>annotations</artifactId>
+    <artifactId>codeowners-annotations</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <properties>

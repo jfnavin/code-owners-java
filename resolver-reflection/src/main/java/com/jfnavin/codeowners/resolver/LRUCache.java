@@ -1,5 +1,7 @@
 package com.jfnavin.codeowners.resolver;
 
+import com.jfnavin.codeowners.model.Owner;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -8,22 +10,22 @@ import java.util.Map;
  */
 class LRUCache {
 
-    final Map<String, String> cache;
+    final Map<String, Owner> cache;
 
     LRUCache(final int size) {
         this.cache = new LinkedHashMap<>(size + 1, 0.75f, true) {
             @Override
-            protected boolean removeEldestEntry(Map.Entry<String, String> eldest) {
+            protected boolean removeEldestEntry(Map.Entry<String, Owner> eldest) {
                 return size() > size;
             }
         };
     }
 
-    synchronized void put(final Class<?> clazz, final String value) {
+    synchronized void put(final Class<?> clazz, final Owner value) {
         put(clazz.getName(), value);
     }
 
-    synchronized void put(final String key, final String value) {
+    synchronized void put(final String key, final Owner value) {
         this.cache.put(key, value);
     }
 
@@ -35,11 +37,11 @@ class LRUCache {
         return this.cache.containsKey(key);
     }
 
-    synchronized String get(final Class<?> clazz) {
+    synchronized Owner get(final Class<?> clazz) {
         return get(clazz.getName());
     }
 
-    synchronized String get(final String key) {
+    synchronized Owner get(final String key) {
         return this.cache.get(key);
     }
 }

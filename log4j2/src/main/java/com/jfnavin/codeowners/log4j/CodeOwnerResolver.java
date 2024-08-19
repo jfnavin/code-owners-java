@@ -66,7 +66,7 @@ public class CodeOwnerResolver implements EventResolver {
         try {
             final var clazz = Class.forName(loggerName);
             ownerResolver.resolverOwner(clazz).ifPresentOrElse(
-                    jsonWriter::writeString,
+                    owner -> jsonWriter.writeArray(owner.ids()),
                     jsonWriter::writeNull
             );
         } catch (ClassNotFoundException e) {

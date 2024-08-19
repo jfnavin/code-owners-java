@@ -26,7 +26,7 @@
     "$resolver": "message",
     "stringified": true
   },
-  "owner": {
+  "owners": {
     "$resolver": "owner"
   }
 }

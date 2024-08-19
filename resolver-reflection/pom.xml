@@ -27,6 +27,10 @@
             <groupId>com.jfnavin.codeowners</groupId>
             <artifactId>codeowners-resolver-api</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.jfnavin.codeowners</groupId>
+            <artifactId>codeowners-model</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>

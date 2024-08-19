@@ -11,14 +11,10 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>codeowners-resolver-api</artifactId>
+    <artifactId>codeowners-model</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.jfnavin.codeowners</groupId>
-            <artifactId>codeowners-model</artifactId>
-        </dependency>
-    </dependencies>
+    <properties>
+    </properties>
 
 </project>

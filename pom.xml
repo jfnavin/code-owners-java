@@ -7,6 +7,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>model</module>
         <module>annotations</module>
         <module>resolver-api</module>
         <module>resolver-reflection</module>
@@ -30,6 +31,11 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.jfnavin.codeowners</groupId>
+                <artifactId>codeowners-model</artifactId>
+                <version>${codeowners.version}</version>
+            </dependency>
             <dependency>
                 <groupId>com.jfnavin.codeowners</groupId>
                 <artifactId>codeowners-annotations</artifactId>
